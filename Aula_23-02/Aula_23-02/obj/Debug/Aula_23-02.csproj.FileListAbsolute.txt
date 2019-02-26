@@ -1,0 +1,7 @@
+C:\Users\HamonRa\Desktop\Programming\Aula_23-02\Aula_23-02\bin\Debug\Aula_23-02.exe.config
+C:\Users\HamonRa\Desktop\Programming\Aula_23-02\Aula_23-02\bin\Debug\Aula_23-02.exe
+C:\Users\HamonRa\Desktop\Programming\Aula_23-02\Aula_23-02\bin\Debug\Aula_23-02.pdb
+C:\Users\HamonRa\Desktop\Programming\Aula_23-02\Aula_23-02\obj\Debug\Aula_23-02.csprojAssemblyReference.cache
+C:\Users\HamonRa\Desktop\Programming\Aula_23-02\Aula_23-02\obj\Debug\Aula_23-02.csproj.CoreCompileInputs.cache
+C:\Users\HamonRa\Desktop\Programming\Aula_23-02\Aula_23-02\obj\Debug\Aula_23-02.exe
+C:\Users\HamonRa\Desktop\Programming\Aula_23-02\Aula_23-02\obj\Debug\Aula_23-02.pdb
