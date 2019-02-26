@@ -1,1 +1,1 @@
-# Algoritmos-t-cnicas-de-programa-o
+# Algoritmos e Técnicas de Programação
