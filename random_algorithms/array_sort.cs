@@ -10,6 +10,8 @@ namespace Test
     {
         static void Main(string[] args)
         {
+            
+            //https://www.geeksforgeeks.org/different-ways-to-sort-an-array-in-descending-order-in-c-sharp/
             Random rnd = new Random();
             int[] test = new int[10];
             string[] test1 = { "Enzo", "Arthur", "João", "Pedro", "Gustavo", "Miguel", "Lucas" };
