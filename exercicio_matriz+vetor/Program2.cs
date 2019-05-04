@@ -26,11 +26,7 @@ namespace Exercicios_vetor_matriz
             Console.WriteLine("Time: {0} - Partida: {1} - Gols: {2}", gols_time[1, 0], gols_time[1, 1], gols_time[1, 2]);
             for (int i = 0; i < gols_time.GetLength(0); i++)
             {
-                for (int j = 0; j < gols_time.GetLength(1); j++)
-                {
-                    Console.WriteLine("Time: {0} - Partida: {1} - Gols: {2}", gols_time[i, 0], gols_time[i, 1], gols_time[i, 2]);
-                    //Console.Write(gols_time[i, j] + "\t");
-                }
+                Console.WriteLine("Time: {0} - Partida: {1} - Gols: {2}", gols_time[i, 0], gols_time[i, 1], gols_time[i, 2]);
                 Console.WriteLine();
             }
 
