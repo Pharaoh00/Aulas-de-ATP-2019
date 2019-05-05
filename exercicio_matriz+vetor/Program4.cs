@@ -5,6 +5,34 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions; // Import para regex.
 
+// Procedimentos & Funções
+/*
+ * Exercicios 1  -  Linha = 38
+ * Exercicios 2  -  Linha = 59
+ * Exercicios 3  -  Linha = 92
+ * Exercicios 4  -  Linha = 121
+ * Exercicios 5  -  Linha = 174
+ * Exercicios 6  -  Linha = 209
+ * Exercicios 7  -  Linha = 231
+ * Exercicios 8  -  Linha = 260
+ * Exercicios 9  -  Linha = 286
+ * Exercicios 10 -  Linha = 
+ */
+
+// Main (MENU)
+/*
+ * Exercicios 1  -  Linha = 449
+ * Exercicios 2  -  Linha = 509
+ * Exercicios 3  -  Linha = 525
+ * Exercicios 4  -  Linha = 551
+ * Exercicios 5  -  Linha = 573
+ * Exercicios 6  -  Linha = 590
+ * Exercicios 7  -  Linha = 598
+ * Exercicios 8  -  Linha = 616
+ * Exercicios 9  -  Linha = 633
+ * Exercicios 10 -  Linha = 
+ */
+
 namespace Exercicios_vetor_matriz
 {
     class Program
@@ -158,7 +186,7 @@ namespace Exercicios_vetor_matriz
             O tamanho do vetor deve ser informado pelo usuário (maior ou igual a 2).
             Não é para atribuir valores inexistentes no vetor para o maior ou o menor.
          */
-         static double[] exercicio5(int[] matrix)
+        static double[] exercicio5(int[] matrix)
         {
             int maior = int.MinValue;
             int menor = int.MaxValue;
@@ -614,7 +642,6 @@ namespace Exercicios_vetor_matriz
                             }
                         }
                         exercicio9(matriz9);
-
                         break;
 
                     //EXERCICIO 10
