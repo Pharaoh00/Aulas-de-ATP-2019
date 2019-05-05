@@ -112,25 +112,27 @@ namespace Exercicios_vetor_matriz
             {
                 if(i % 2 == 0)
                 {
-                    if(i > matrix1.Length)
-                    {
-                        retorno[i] = matrix1[i / 2];
-                    }
-                    else
-                    {
-                        retorno[i] = matrix1[i/2];
-                    }
+                    //if(i > matrix1.Length)
+                    //{
+                    //    retorno[i] = matrix1[i / 2];
+                    //}
+                    //else
+                    //{
+                    //    retorno[i] = matrix1[i];
+                    //}
+                    retorno[i] = matrix1[i / 2];
                 }
                 else
                 {
-                    if (i > matrix2.Length)
-                    {
-                        retorno[i] = matrix2[i / 2];
-                    }
-                    else
-                    {
-                        retorno[i] = matrix2[i/2];
-                    }
+                    //if (i > matrix2.Length)
+                    //{
+                    //    retorno[i] = matrix2[i / 2];
+                    //}
+                    //else
+                    //{
+                    //    retorno[i] = matrix2[i];
+                    //}
+                    retorno[i] = matrix2[i / 2];
                 }
             }
 
