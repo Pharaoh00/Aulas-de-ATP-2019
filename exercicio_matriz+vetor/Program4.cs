@@ -112,27 +112,97 @@ namespace Exercicios_vetor_matriz
             {
                 if(i % 2 == 0)
                 {
-                    //if(i > matrix1.Length)
+
+                    //if (i < matrix1.Length)
                     //{
                     //    retorno[i] = matrix1[i / 2];
                     //}
                     //else
                     //{
-                    //    retorno[i] = matrix1[i];
+                    //    retorno[i] = matrix1[i/2];
                     //}
-                    retorno[i] = matrix1[i / 2];
+                    retorno[i] = matrix1[i / 2]; // Dividido por 2 pq são dois vetores
                 }
                 else
                 {
-                    //if (i > matrix2.Length)
+                    //if (i < matrix2.Length)
                     //{
                     //    retorno[i] = matrix2[i / 2];
                     //}
                     //else
                     //{
-                    //    retorno[i] = matrix2[i];
+                    //    retorno[i] = matrix2[i/2];
                     //}
                     retorno[i] = matrix2[i / 2];
+                }
+                //if(i < matrix2.Length)
+                //{
+                //    Console.WriteLine(i);
+                //}
+                //Console.WriteLine((i - matrix2.Length));
+            }
+
+            /*
+             * BUG:
+             * Os dois vetores como parametro devem ser do mesmo tamanho.
+             * Se forem de tamanhos diferentes i/2 acessa um valor diferente.
+             */
+            
+            return retorno;
+        }
+
+        //Exercicios 5
+        /*
+         *  Faça um procedimento que receba como parâmetro um vetor de inteiros e
+            mostre na tela o maior valor, o menor valor e a média dos valores do vetor.
+            O tamanho do vetor deve ser informado pelo usuário (maior ou igual a 2).
+            Não é para atribuir valores inexistentes no vetor para o maior ou o menor.
+         */
+         static double[] exercicio5(int[] matrix)
+        {
+            int maior = int.MinValue;
+            int menor = int.MaxValue;
+            double media = 0.0f;
+            double soma = 0.0f;
+            double[] retorno = new double[3];
+            for(int i = 0; i < matrix.Length; i++)
+            {
+                if(matrix[i] > maior)
+                {
+                    maior = matrix[i];
+                }
+                if(matrix[i] < menor)
+                {
+                    menor = matrix[i];
+                }
+                soma += matrix[i];
+            }
+            media = soma / matrix.Length;
+
+            retorno[0] = maior;
+            retorno[1] = menor;
+            retorno[2] = media;
+
+            return retorno;
+        }
+
+        //Exercicios 6
+        /*
+         *  Faça um programa contend uma função que receba como parâmetro as
+            quantidades de linhas e de colunas de uma matriz, monte e retorne a
+            matriz, conforme característica abaixo. A matriz retornada deve ser
+            impressa no main, usando um procedimento Imprime.
+         */
+        static int[,] exercicio6(int linhas, int colunas)
+        {
+            int[,] retorno = new int[linhas, colunas];
+            int count = 1;
+            for(int i = 0; i < retorno.GetLength(0); i++)
+            {
+                for(int j = 0; j < retorno.GetLength(1); j++)
+                {
+                    retorno[i, j] = count;
+                    count++;
                 }
             }
 
@@ -162,7 +232,28 @@ namespace Exercicios_vetor_matriz
                     retorno += String.Format("{0}, ", matrix[i]);
                 }
             }
-            Console.Write(retorno);
+            Console.WriteLine(retorno);
+        }
+
+        static void imprimeMatriz<T>(T[,] matriz)
+        {
+            for (int i = 0; i < matriz.GetLength(0); i++)
+            {
+                for (int j = 0; j < matriz.GetLength(1); j++)
+                {
+                    Console.Write("{0}\t", matriz[i, j]);
+                    //if(j == 0)
+                    //{
+                    //    Console.Write("Linha: {0} - ({1}\t", i, matriz[i, j]);
+                    //}
+                    //else
+                    //{
+                    //    Console.Write("{0}", matriz[i, j]);
+                    //}
+
+                }
+                Console.WriteLine();
+            }
         }
 
         //My custom "regex"
@@ -304,18 +395,17 @@ namespace Exercicios_vetor_matriz
 
                     //EXERCICIO 2
                     case 2:
-                        int[] matriz = new int[10];
-                        for(int i = 0; i < matriz.Length; i++)
+                        int[] matriz2 = new int[10];
+                        for(int i = 0; i < matriz2.Length; i++)
                         {
-                            matriz[i] = rnd.Next(50);
+                            matriz2[i] = rnd.Next(50);
                         }
                         Console.Write("Lista fora de ordem: ");
-                        imprime(matriz);
+                        imprime(matriz2);
                         Console.WriteLine(); 
-                        exercicio2(matriz); //function call
+                        exercicio2(matriz2); //function call
                         Console.Write("Lista em ordem: ");
-                        imprime(matriz);
-                        Console.WriteLine();
+                        imprime(matriz2);
                         Console.WriteLine();
                         break;
 
@@ -343,28 +433,72 @@ namespace Exercicios_vetor_matriz
                             Console.Write("A lista não está ordenada.");
                         }
                         Console.WriteLine();
-                        Console.WriteLine();
                         break;
 
                     //EXERCICIO 4
                     case 4:
-                        int[] vetor1 = { 1, 3, 4, 6, 8, 10 };
-                        int[] vetor2 = { 2, 4, 5, 7, 9, 11 };
+                        //int[] vetor1 = { 1, 3, 4, 6, 8, 10, 12 };
+                        //int[] vetor2 = { 2, 4, 5, 7, 9, 11, 13 };
+                        int r4 = 0;
+                        Console.Write("Digite um valor para os vetores: ");
+                        tamanho = int.Parse(Console.ReadLine());
+                        int[] vetor1 = new int[tamanho];
+                        int[] vetor2 = new int[tamanho];
+                        for(int i = 0; i < vetor1.Length; i++)
+                        {
+                            Console.Write("Digite um valor para o vetor 1: ");
+                            r4 = int.Parse(Console.ReadLine());
+                            vetor1[i] = r4;
+                            Console.Write("Digite um valor para o vetor 2: ");
+                            r4 = int.Parse(Console.ReadLine());
+                            vetor2[i] = r4;
+                        }
                         imprime(exercicio4(vetor1, vetor2));
                         Console.WriteLine();
-                        Console.WriteLine();
+                        break;
 
-                        break;
+                    //EXERCICIO 5
                     case 5:
+                        Console.Write("Digite o Tamanho do vetor: ");
+                        tamanho = int.Parse(Console.ReadLine());
+                        int[] matriz5 = new int[tamanho];
+                        for(int i = 0; i < matriz5.Length; i++)
+                        {
+                            matriz5[i] = rnd.Next(100);
+                        }
+                        double[] r5 = exercicio5(matriz5);
+                        imprime(matriz5);
+                        Console.WriteLine("O maior valor: {0}", r5[0]);
+                        Console.WriteLine("O menor valor: {0}", r5[1]);
+                        Console.WriteLine("A media foi: {0}", r5[2]);
+                        Console.WriteLine();
                         break;
+
+                    //EXERCICIO 6
                     case 6:
+                        Console.Write("Digite o Tamanho da matriz: ");
+                        tamanho = int.Parse(Console.ReadLine());
+                        imprimeMatriz(exercicio6(4, 4));
+                        Console.WriteLine();
                         break;
+
+                    //EXERCICIO 7
                     case 7:
                         break;
+
+                    //EXERCICIO 8
+                    case 8:
+                        break;
+
+                    //EXERCICIO 9
                     case 9:
                         break;
+
+                    //EXERCICIO 10
                     case 10:
                         break;
+
+                    //EXERCICIO Bonus 11
                     case 11:
                         string[] times = { "atletico", "cruzeiro", "america"};
                         string[,] partida_gols = new string[times.Length, 3];
