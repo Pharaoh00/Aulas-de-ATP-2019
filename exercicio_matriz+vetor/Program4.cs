@@ -96,7 +96,7 @@ namespace Exercicios_vetor_matriz
             return retorno;
         }
 
-        //Exercicios 3
+        //Exercicios 4
         /*
          *  Faça um programa contendo uma função que recebe como parâmetro dois
             vetores ordenados, cada um com N valores inteiros, sendo N definido pelo
