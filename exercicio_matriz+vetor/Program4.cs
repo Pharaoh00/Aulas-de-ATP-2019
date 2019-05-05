@@ -209,6 +209,90 @@ namespace Exercicios_vetor_matriz
             return retorno;
         }
 
+        //Exercicios 7
+        /*
+         *  Faça um programa contend uma função que recebe como parâmetro uma
+            matriz de inteiros quadrada, cuja dimensão será informada pelo usuário e
+            retorne a soma dos elementos que estão na diagonal principal da matriz.
+         */
+        static void exercicio7(int[,] matrix)
+        {
+            int soma = 0;
+            for(int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for(int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    if(i == j)
+                    {
+                        Console.Write(matrix[i, j] + "\t");
+                        soma += matrix[i, j];
+                    }
+                    else
+                    {
+                        Console.Write("\t");
+                    }
+                }
+                Console.WriteLine("\n");
+            }
+            Console.WriteLine("A soma da diagonal da matriz é : {0}", soma);
+        }
+
+        //Exercicios 8
+        /*
+         *  Faça um programa contendo um procedimento que recebe como
+            parâmetro uma matriz de inteiros quadrada, cuja dimensão será informada
+            pelo usuário e mostre na tela apenas os elementos que estão na diagonal
+            secundária da matriz.
+         */
+         static void exercicio8(int[,] matrix)
+        {
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    if (i + j == matrix.GetLength(0) - 1)
+                    {
+                        Console.Write(matrix[i, j] + "\t");
+                    }
+                    else
+                    {
+                        Console.Write("\t");
+                    }
+                }
+                Console.WriteLine("\n");
+            }
+        }
+
+        //Exercicios 9
+        /*
+         *  Faça um programa contendo um procedimento que represente com o
+            símbolo ‘#’ a parte hachurada das matrizes abaixo e com espaço vazio as
+            demais posições. Utilize uma matriz de char, quadrada, cuja dimensão será
+            recebida como parâmetro. Mostre cada uma das matrizes na tela.
+         */
+        static void exercicio9(char[,] matrix)
+        {
+            for(int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for(int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    if (i == j)
+                    {
+                        Console.Write(matrix[i, j] + "\t");
+                    }
+                    else if (i + j == matrix.GetLength(0) - 1)
+                    {
+                        Console.Write(matrix[i, j] + "\t");
+                    }
+                    else
+                    {
+                        Console.Write("\t");
+                    }
+                }
+                Console.WriteLine("\n");
+            }
+        }
+
         //Para orlando:
         //Sei que é "levemente" avançado, mas queria uma função generica.
         //So para funcionar com qualquer tipo. Para nao ter duas funções que fazem a mesma coisa.
@@ -484,14 +568,53 @@ namespace Exercicios_vetor_matriz
 
                     //EXERCICIO 7
                     case 7:
+                        Console.Write("Digite o tamanho da matriz: ");
+                        tamanho = int.Parse(Console.ReadLine());
+                        int[,] matriz7 = new int[tamanho, tamanho];
+                        for (int i = 0; i < matriz7.GetLength(0); i++)
+                        {
+                            for (int j = 0; j < matriz7.GetLength(1); j++)
+                            {
+                                matriz7[i, j] = rnd.Next(9);
+                            }
+                        }
+                        imprimeMatriz(matriz7);
+                        Console.WriteLine();
+                        exercicio7(matriz7);
+                        Console.WriteLine();
                         break;
 
                     //EXERCICIO 8
                     case 8:
+                        Console.Write("Digite o tamanho da matriz: ");
+                        tamanho = int.Parse(Console.ReadLine());
+                        int[,] matriz8 = new int[tamanho, tamanho];
+                        for (int i = 0; i < matriz8.GetLength(0); i++)
+                        {
+                            for (int j = 0; j < matriz8.GetLength(1); j++)
+                            {
+                                matriz8[i, j] = rnd.Next(9);
+                            }
+                        }
+                        imprimeMatriz(matriz8);
+                        Console.WriteLine();
+                        exercicio8(matriz8);
                         break;
 
                     //EXERCICIO 9
                     case 9:
+                        Console.Write("Digite o tamanho da matriz: ");
+                        tamanho = int.Parse(Console.ReadLine());
+                        char[,] matriz9 = new char[tamanho, tamanho];
+                        for (int i = 0; i < matriz9.GetLength(0); i++)
+                        {
+                            for (int j = 0; j < matriz9.GetLength(1); j++)
+                            {
+                                matriz9[i, j] = '#';
+                            }
+                        }
+                        exercicio9(matriz9);
+
                         break;
 
                     //EXERCICIO 10
