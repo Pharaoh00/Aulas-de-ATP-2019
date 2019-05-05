@@ -207,6 +207,7 @@ namespace Exercicios_vetor_matriz
             }
             media = soma / matrix.Length;
 
+            //"Hack" para retornar mais de um valor.
             retorno[0] = maior;
             retorno[1] = menor;
             retorno[2] = media;
