@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions; // Import para regex.
 
-// Hamon-Rá Taveira Guimarães & Daniel Santos França
+// Daniel Santos França & Hamon-Rá Taveira Guimarães  
 
 // Procedimentos & Funções
 /*
