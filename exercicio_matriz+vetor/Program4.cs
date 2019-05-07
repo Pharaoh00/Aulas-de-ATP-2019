@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions; // Import para regex.
 
+// Hamon-Rá Taveira Guimarães & Daniel Santos França
+
 // Procedimentos & Funções
 /*
  * Exercicios 1  -  Linha = 38
@@ -38,18 +40,24 @@ namespace Exercicios_vetor_matriz
     class Program
     {
 
+        //Para orlando:
+        //Deixei alguns cometanrios para você.
+        //Algumas coisas não são exatamente como a questão pedia,
+        //mas fui tentando organizar como eu pude.
+        //
+        //Deixei os meus "testes" anteriores como, linha de pensamento.
+        //Muita coisa eu tentei passar para o mais simples, por exemplo,
+        //Regex, eu fiz algo proximo do que eu acho que possa ser, pelo
+        //menos funciona.
+        //
+        //Devem ter muitos erros bobos, muita coisa acontecendo ao mesmo
+        //tempo, principalmente em relação a faculdade.
+        //Mas tentei fazer o meu melhor.
+        //Obrigado.
+
         // -- Procedimentos & Funções
 
         //Exercicios 1
-        /*
-         *  Faça um programa contendo um procedimento que receba como
-            parâmetro dois vetores de caracteres. O primeiro vetor representa o
-            gabarito da prova e o segundo vetor contém as respostas de um
-            determinado aluno. No método deve ser informado o número de acertos do
-            aluno e o percentual de acertos. Cada vetor deverá conter 10 caracteres,
-            variando de A a E. Caso o usuário digite o caracter minúsculo, o programa
-            deve convertê-lo para maiúsculo.
-        */
         static void exercicio1(char[] gabarito, char[] aluno)
         {
             double acertos = 0;
@@ -66,11 +74,6 @@ namespace Exercicios_vetor_matriz
         }
 
         //Exercicios 2
-        /*
-        *   Faça uma função que recebe como parâmetro um vetor de inteiros e
-            retorne esse vetor ordenado em ordem crescente. No método main,
-            imprimir esse vetor, usando um procedimento chamado Imprime.
-        */
         static int[] exercicio2(int[] matrix)
         {
             //Para orlando:
@@ -96,14 +99,6 @@ namespace Exercicios_vetor_matriz
         }
 
         //Exercicios 3
-        /*
-         *  Faça um programa contend uma função booleana que recebe como
-            parâmetro um vetor de palavras e retorne true caso as palavras estejam
-            ordenadas em ordem crescente, ou false, caso contrário. O tamanho do
-            vetor será informado pelo usuário. No método main exibir uma mensagem
-            informando se o vetor está ou não em ordem crescente (não é para
-            imprimir apenas true ou false).
-         */
         static bool exercicio3(string[] matrix)
         {
             bool retorno = true;
@@ -125,14 +120,6 @@ namespace Exercicios_vetor_matriz
         }
 
         //Exercicios 4
-        /*
-         *  Faça um programa contendo uma função que recebe como parâmetro dois
-            vetores ordenados, cada um com N valores inteiros, sendo N definido pelo
-            usuário. A função deverá retornar um novo vetor, com 2xN elementos,
-            intercalando os elementos dos dois vetrores lidos, mantendo esse terceiro
-            vetor ordenado.
-         */
-
         static int[] exercicio4(int[] matrix1, int[] matrix2)
         {
             int[] retorno = new int[matrix1.Length * 2];
@@ -180,12 +167,6 @@ namespace Exercicios_vetor_matriz
         }
 
         //Exercicios 5
-        /*
-         *  Faça um procedimento que receba como parâmetro um vetor de inteiros e
-            mostre na tela o maior valor, o menor valor e a média dos valores do vetor.
-            O tamanho do vetor deve ser informado pelo usuário (maior ou igual a 2).
-            Não é para atribuir valores inexistentes no vetor para o maior ou o menor.
-         */
         static double[] exercicio5(int[] matrix)
         {
             //int maior = int.MinValue; //"hack"
@@ -223,12 +204,6 @@ namespace Exercicios_vetor_matriz
         }
 
         //Exercicios 6
-        /*
-         *  Faça um programa contend uma função que receba como parâmetro as
-            quantidades de linhas e de colunas de uma matriz, monte e retorne a
-            matriz, conforme característica abaixo. A matriz retornada deve ser
-            impressa no main, usando um procedimento Imprime.
-         */
         static int[,] exercicio6(int linhas, int colunas)
         {
             int[,] retorno = new int[linhas, colunas];
@@ -246,11 +221,6 @@ namespace Exercicios_vetor_matriz
         }
 
         //Exercicios 7
-        /*
-         *  Faça um programa contend uma função que recebe como parâmetro uma
-            matriz de inteiros quadrada, cuja dimensão será informada pelo usuário e
-            retorne a soma dos elementos que estão na diagonal principal da matriz.
-         */
         static void exercicio7(int[,] matrix)
         {
             int soma = 0;
@@ -274,12 +244,6 @@ namespace Exercicios_vetor_matriz
         }
 
         //Exercicios 8
-        /*
-         *  Faça um programa contendo um procedimento que recebe como
-            parâmetro uma matriz de inteiros quadrada, cuja dimensão será informada
-            pelo usuário e mostre na tela apenas os elementos que estão na diagonal
-            secundária da matriz.
-         */
         static void exercicio8(int[,] matrix)
         {
             for (int i = 0; i < matrix.GetLength(0); i++)
@@ -300,12 +264,6 @@ namespace Exercicios_vetor_matriz
         }
 
         //Exercicios 9
-        /*
-         *  Faça um programa contendo um procedimento que represente com o
-            símbolo ‘#’ a parte hachurada das matrizes abaixo e com espaço vazio as
-            demais posições. Utilize uma matriz de char, quadrada, cuja dimensão será
-            recebida como parâmetro. Mostre cada uma das matrizes na tela.
-         */
         static void exercicio9(char[,] matrix)
         {
             for (int i = 0; i < matrix.GetLength(0); i++)
@@ -329,6 +287,7 @@ namespace Exercicios_vetor_matriz
             }
         }
 
+        //Exercicios 10
         static void exercicio10(int[,] matrix)
         {
             int maiorX = 0;
@@ -356,7 +315,7 @@ namespace Exercicios_vetor_matriz
                     menorY = i;
                 }
             }
-            Console.WriteLine("O maior valor X é {0}, e o menor Y {1}", maior, menor);
+            Console.WriteLine("O maior valor de X é: {0}, e o menor de Y: {1}", maior, menor);
 
         }
 
@@ -512,7 +471,7 @@ namespace Exercicios_vetor_matriz
 
                             if (customRegex(r1, range)) //Custom "regex"
                             {
-                                respostas[count] = char.Parse(r1);
+                                respostas[count] = char.Parse(r1); //"hack" para adicionar no vetor char.
                                 Console.WriteLine("Nota {0} adicionada.", r1);
                                 count++;
                             }
@@ -665,6 +624,7 @@ namespace Exercicios_vetor_matriz
                         imprimeMatriz(matriz8);
                         Console.WriteLine();
                         exercicio8(matriz8);
+                        Console.WriteLine();
                         break;
 
                     //EXERCICIO 9
@@ -680,6 +640,7 @@ namespace Exercicios_vetor_matriz
                             }
                         }
                         exercicio9(matriz9);
+                        Console.WriteLine();
                         break;
 
                     //EXERCICIO 10
@@ -694,9 +655,10 @@ namespace Exercicios_vetor_matriz
                                 matriz10[i, j] = rnd.Next(99);
                             }
                         }
-                        exercicio10(matriz10);
+                        
                         imprimeMatriz(matriz10);
-
+                        exercicio10(matriz10);
+                        Console.WriteLine();
                         break;
 
                     default:
