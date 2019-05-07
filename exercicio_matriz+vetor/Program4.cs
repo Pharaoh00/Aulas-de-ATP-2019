@@ -188,13 +188,20 @@ namespace Exercicios_vetor_matriz
          */
         static double[] exercicio5(int[] matrix)
         {
-            int maior = int.MinValue;
-            int menor = int.MaxValue;
+            //int maior = int.MinValue; //"hack"
+            //int menor = int.MaxValue;
+            int maior = 0;
+            int menor = 0;
             double media = 0.0f;
             double soma = 0.0f;
             double[] retorno = new double[3];
             for (int i = 0; i < matrix.Length; i++)
             {
+                if(i == 0)
+                {
+                    maior = matrix[i];
+                    menor = matrix[i];
+                }
                 if (matrix[i] > maior)
                 {
                     maior = matrix[i];
@@ -329,9 +336,9 @@ namespace Exercicios_vetor_matriz
             int menorY = 0;
             int maior = 0;
             int menor = 0;
-            for(int i = 0; i < matrix.GetLength(0); i++)
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                for(int j = 0; j < matrix.GetLength(1); j++)
+                for (int j = 0; j < matrix.GetLength(1); j++)
                 {
                     if (i == 0 && j == 0 || maior < matrix[i, j])
                     {
@@ -340,9 +347,9 @@ namespace Exercicios_vetor_matriz
                     }
                 }
             }
-            for(int i = 0; i < matrix.GetLongLength(0); i++)
+            for (int i = 0; i < matrix.GetLongLength(0); i++)
             {
-                if(i == 0 || menor > matrix[maiorX, i])
+                if (i == 0 || menor > matrix[maiorX, i])
                 {
                     menor = matrix[maiorX, i];
                     menorX = maiorX;
@@ -434,11 +441,6 @@ namespace Exercicios_vetor_matriz
             return retorno;
         }
 
-        static void exercicioBonus1(string[] times, int[,] matrix)
-        {
-
-        }
-
         // -- Fim - Metodos/Procedimentos & Funções
 
         static void Main(string[] args)
@@ -449,15 +451,15 @@ namespace Exercicios_vetor_matriz
             Console.WriteLine("Exercícios Avaliativos Vetores e Matriz");
 
             //Criando e preenchendo o menu automaticamente.
-            string[] menu = new string[11]; //NÃO ESQUECER - SE FOR ADD MAIS OPÇÕES AUMENTAR O TAMANHO.
+            string[] menu = new string[10]; //NÃO ESQUECER - SE FOR ADD MAIS OPÇÕES AUMENTAR O TAMANHO.
             for (int i = 0; i < menu.Length; i++)
             {
                 menu[i] = String.Format("{0} - Para questão: {1}", i + 1, i + 1);
-
-                if (i == 10) //"hack" para adicionar mais opções.
+                if (i == menu.Length - 1)
                 {
-                    menu[i] = String.Format("{0} - Exercicio Bonus {1}: Time de Futebol", i + 1, i - 9);
+                    Console.WriteLine("Para sair {0}.", "exit");
                 }
+
             }
 
             bool running = true;
@@ -469,16 +471,20 @@ namespace Exercicios_vetor_matriz
                     Console.WriteLine(opcao);
                 }
                 Console.Write("\nDigite a opção desejada: ");
-                int opcoes = int.Parse(Console.ReadLine());
+                //"Hack" para o programa nao sair, se caso o usuario passar uma string.
+                //Exemplo:
+                //int opcoes = int.Parse(Console.ReadLine())
+                //se for uma letra, o programa crash.
+                string opcoes = Console.ReadLine();
                 switch (opcoes)
                 {
-                    case 0:
+                    case "exit":
                         Console.WriteLine("Obrigado por usar o meu programa.");
                         running = false;
                         break;
 
                     //EXERCICIO 1
-                    case 1:
+                    case "1":
                         int count = 0;
                         char[] gabarito = { 'A', 'A', 'B', 'D', 'E', 'C', 'B', 'D', 'B', 'A' };
                         char[] respostas = new char[10];
@@ -538,7 +544,7 @@ namespace Exercicios_vetor_matriz
                         break;
 
                     //EXERCICIO 2
-                    case 2:
+                    case "2":
                         int[] matriz2 = new int[10];
                         for (int i = 0; i < matriz2.Length; i++)
                         {
@@ -554,7 +560,7 @@ namespace Exercicios_vetor_matriz
                         break;
 
                     //EXERCICIO 3
-                    case 3:
+                    case "3":
                         //string[] nomes = { "Arthur", "Barbara", "Leonardo", "Hamon" };
                         tamanho = int.Parse(Console.ReadLine());
                         string[] palavras = new string[tamanho];
@@ -580,7 +586,7 @@ namespace Exercicios_vetor_matriz
                         break;
 
                     //EXERCICIO 4
-                    case 4:
+                    case "4":
                         //int[] vetor1 = { 1, 3, 4, 6, 8, 10, 12 };
                         //int[] vetor2 = { 2, 4, 5, 7, 9, 11, 13 };
                         int r4 = 0;
@@ -602,7 +608,7 @@ namespace Exercicios_vetor_matriz
                         break;
 
                     //EXERCICIO 5
-                    case 5:
+                    case "5":
                         Console.Write("Digite o Tamanho do vetor: ");
                         tamanho = int.Parse(Console.ReadLine());
                         int[] matriz5 = new int[tamanho];
@@ -619,7 +625,7 @@ namespace Exercicios_vetor_matriz
                         break;
 
                     //EXERCICIO 6
-                    case 6:
+                    case "6":
                         Console.Write("Digite o Tamanho da matriz: ");
                         tamanho = int.Parse(Console.ReadLine());
                         imprimeMatriz(exercicio6(4, 4));
@@ -627,7 +633,7 @@ namespace Exercicios_vetor_matriz
                         break;
 
                     //EXERCICIO 7
-                    case 7:
+                    case "7":
                         Console.Write("Digite o tamanho da matriz: ");
                         tamanho = int.Parse(Console.ReadLine());
                         int[,] matriz7 = new int[tamanho, tamanho];
@@ -645,7 +651,7 @@ namespace Exercicios_vetor_matriz
                         break;
 
                     //EXERCICIO 8
-                    case 8:
+                    case "8":
                         Console.Write("Digite o tamanho da matriz: ");
                         tamanho = int.Parse(Console.ReadLine());
                         int[,] matriz8 = new int[tamanho, tamanho];
@@ -662,7 +668,7 @@ namespace Exercicios_vetor_matriz
                         break;
 
                     //EXERCICIO 9
-                    case 9:
+                    case "9":
                         Console.Write("Digite o tamanho da matriz: ");
                         tamanho = int.Parse(Console.ReadLine());
                         char[,] matriz9 = new char[tamanho, tamanho];
@@ -677,11 +683,11 @@ namespace Exercicios_vetor_matriz
                         break;
 
                     //EXERCICIO 10
-                    case 10:
+                    case "10":
                         Console.Write("Digite o tamanho da matriz: ");
                         tamanho = int.Parse(Console.ReadLine());
                         int[,] matriz10 = new int[tamanho, tamanho];
-                        for(int i = 0; i < matriz10.GetLongLength(0); i++)
+                        for (int i = 0; i < matriz10.GetLongLength(0); i++)
                         {
                             for (int j = 0; j < matriz10.GetLongLength(1); j++)
                             {
@@ -693,31 +699,8 @@ namespace Exercicios_vetor_matriz
 
                         break;
 
-                    //EXERCICIO Bonus 11
-                    case 11:
-                        string[] times = { "atletico", "cruzeiro", "america" };
-                        string[,] partida_gols = new string[times.Length, 3];
-
-                        for (int i = 0; i < partida_gols.GetLength(0); i++)
-                        {
-                            partida_gols[i, 0] = times[i];
-                            partida_gols[i, 1] = String.Format("{0}", i);
-                            partida_gols[i, 2] = String.Format("{0}", rnd.Next(5));
-
-                        }
-
-                        for (int i = 0; i < partida_gols.GetLength(0); i++)
-                        {
-                            for (int j = 0; j < partida_gols.GetLength(1); j++)
-                            {
-                                Console.Write(partida_gols[i, j] + "\t");
-                            }
-                            Console.WriteLine();
-                        }
-
-                        break;
                     default:
-                        Console.Write("Opção {0} não é valida.", opcoes);
+                        Console.WriteLine("Opção {0} não é valida.", opcoes);
                         break;
                 }
             }
