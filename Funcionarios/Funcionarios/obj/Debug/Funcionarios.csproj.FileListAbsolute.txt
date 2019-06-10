@@ -1,0 +1,7 @@
+C:\Users\HamonRa\Desktop\Programming\Funcionarios\Funcionarios\bin\Debug\Funcionarios.exe.config
+C:\Users\HamonRa\Desktop\Programming\Funcionarios\Funcionarios\bin\Debug\Funcionarios.exe
+C:\Users\HamonRa\Desktop\Programming\Funcionarios\Funcionarios\bin\Debug\Funcionarios.pdb
+C:\Users\HamonRa\Desktop\Programming\Funcionarios\Funcionarios\obj\Debug\Funcionarios.csprojAssemblyReference.cache
+C:\Users\HamonRa\Desktop\Programming\Funcionarios\Funcionarios\obj\Debug\Funcionarios.csproj.CoreCompileInputs.cache
+C:\Users\HamonRa\Desktop\Programming\Funcionarios\Funcionarios\obj\Debug\Funcionarios.exe
+C:\Users\HamonRa\Desktop\Programming\Funcionarios\Funcionarios\obj\Debug\Funcionarios.pdb
