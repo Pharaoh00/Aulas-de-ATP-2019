@@ -36,7 +36,7 @@ namespace Estudo_prova_11_06_2019
             //    }
             //}
 
-            // So para nao precisar de ficar preenchendo automaticamente as matrizes
+            // So para nao precisar de ficar preenchendo manualmente as matrizes
             for (int i = 0; i < matrixA.GetLength(0); i++)
             {
                 for (int j = 0; j < matrixA.GetLength(1); j++)
